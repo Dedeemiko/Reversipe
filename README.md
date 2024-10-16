@@ -38,15 +38,31 @@ List technologies that will be used in your app, including any libraries to save
 
 -   React
 -   JavaScript
+-   SASS
 -   Axios
 
 ### APIs
 
 List any external sources of data that will be used in your app.
 
+-   Will be using data from https://eightportions.com/datasets/Recipes/ to retrieve the recipe information. I would dataset
+
 ### Sitemap
 
 List the pages of your app with brief descriptions. You can show this visually, or write it out.
+
+-   Home Page
+
+    -   This shows a search bar for inputting ingredients
+    -   A filter for selecting recipes based on country or cusine
+
+-   Recipe Results Page
+    -   This displays recipe cards based on the user's input ingredients
+    -   Each card will show the recipe name and the number of ingredients the user has and the total number required
+-   Recipe Details Page
+    -   This shows detailed recipe instructions, ingredients, how many ingredients the user has for the meal and how many are missing
+-   Cuisine Search Page
+    -   Allow users to search for recipe's based on country or regional cusine
 
 ### Mockups
 
@@ -60,9 +76,44 @@ Describe your data and the relationships between the data points. You can show t
 
 List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
 
+1. GET/recipe/{id}: This retrives the details of a specific recipe
+
+-   Parameters: Recipe ID
+-   Response: JSON object which contains ingredient list, instructions, and time estimate
+
 ## Roadmap
 
 Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation working back from the capstone due date.
+
+-   Frontend and Backend Setup
+
+    -   Set up project repos and environments
+    -   Manually update dataset to include country field for each recipe
+    -   Build basic UI framework
+
+-   Search Functionality
+
+    -   Implement GET endpoints: To allow users to input ingredients and retrieve matching recipes
+    -   Display recipe result on the frontend
+
+-   Recipe Details Page
+
+    -   Create Recipe Details Page: This will show ingredients, instructions and missing ingredient information
+
+-   Filter based on Country and Cuisine Search
+
+    -   Add a country filter: To allow users search for recipes by country or region
+    -   Implement GET endpoint
+
+-   Testing
+
+    -   Test all core funtionalities
+
+-   UI Refinement
+
+    -   Refine the UI
+
+-   Final Testing and Bug Fixes
 
 ---
 
@@ -72,5 +123,6 @@ Your project will be marked based on what you committed to in the above document
 
 -   Dietary Preferences: Allow users filter recipes based on dierary restrictions such as vegan, vegetarian, and gluten-free options.
 -   Responsiveness: The app should be responsive across various breakpoints.
--   User authentication: Implement a login system in order for users to access their saved recepes from any device.
+-   User authentication: Implement a login system in order for users to access their saved recipes and bulk ingredients from any device.
+-   Add an option for users to save their favorite recipes
 -   Shopping list generator: Create a shopping list for missing ingredients from a recipe.
