@@ -1,5 +1,5 @@
 import React from "react";
-
+import Card from "./Card";
 import { useNavigate } from "react-router-dom";
 
 
@@ -14,13 +14,13 @@ function HomePageContent() {
             <p>What would you like to do today?</p>
 
             <div className="homepage-content__options">
-                <card
+                <Card
                     title="Search by Ingredients"
                     imageSrc=""
                     onClick={() => navigate("/search-by-ingredients")}
                 />
 
-                <card
+                <Card
                     title="Search by Recipe"
                     imageSrc=""
                     onClick={() => navigate("/search-by-recipe")}
