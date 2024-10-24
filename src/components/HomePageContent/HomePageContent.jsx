@@ -1,4 +1,5 @@
 import React from "react";
+import "./HomePageContent.scss";
 import Card from "../Card/Card";
 import { useNavigate } from "react-router-dom";
 import recipeImage from "../../assets/images/pancake-img.jpg"
