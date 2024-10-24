@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SearchInput from "../../components/SearchInput/SearchInput";
 import Button from "../../components/Button/Button";
+import "./SearchByIngredientsPage.scss";
 
 
 function SearchByIngredientsPage() {

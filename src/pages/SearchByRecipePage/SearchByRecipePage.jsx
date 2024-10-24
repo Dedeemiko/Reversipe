@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import SearchInput from "../../components/SearchInput/SearchInput";
+import Button from "../../components/Button/Button";
+import "./SearchByRecipePage.scss";
 
 
 function SearchByRecipePage() {
@@ -11,14 +13,22 @@ function SearchByRecipePage() {
     };
 
     return (
-        <div className="Search-ingredients">
+        <div className="search-recipe">
             <h2>Search by Recipe</h2>
 
-            <SearchInput
-                value={searchItem}
-                onChange={handleSearch}
-                placeholder="Search Recipe..."
-            />
+            <div className="search-recipe__options">
+                <SearchInput
+                    value={searchItem}
+                    onChange={handleSearch}
+                    placeholder="Search Recipe..."
+                />
+
+                <Button
+                    buttonType="primary"
+                    text="Search"
+                    handleClick={handleSearch}
+                />
+            </div>
         </div>
     )
 };

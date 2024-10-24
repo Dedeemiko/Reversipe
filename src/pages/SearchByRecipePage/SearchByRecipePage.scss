@@ -1,0 +1,14 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+
+.search-recipe {
+	&__options {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 1rem;
+		gap: 1rem;
+	}
+}
