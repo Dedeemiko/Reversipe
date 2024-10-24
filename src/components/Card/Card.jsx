@@ -7,7 +7,9 @@ function Card({ title, imageSrc, onClick }) {
         <div className="card" onClick={onClick}>
             <img src={imageSrc} alt={title} className="card__img" />
 
-            <div className="card__title">{title}</div>
+            <div className="card__overlay">
+                <div className="card__title">{title}</div>
+            </div>
 
         </div>
     );
