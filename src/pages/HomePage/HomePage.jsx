@@ -2,7 +2,7 @@ import React from "react";
 import HomePageContent from "../../components/HomePageContent/HomePageContent";
 
 
-function Homepage() {
+function HomePage() {
     return (
         <div className="home-page">
             <HomePageContent />
@@ -10,4 +10,4 @@ function Homepage() {
     );
 }
 
-export default Homepage;
+export default HomePage;

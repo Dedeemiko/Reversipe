@@ -1,6 +1,8 @@
 import React from "react";
-import Card from "./Card";
+import Card from "../Card/Card";
 import { useNavigate } from "react-router-dom";
+import recipeImage from "../../assets/images/pancake-img.jpg"
+import ingredientImage from "../../assets/images/ingredients-img.jpg"
 
 
 function HomePageContent() {
@@ -16,13 +18,13 @@ function HomePageContent() {
             <div className="homepage-content__options">
                 <Card
                     title="Search by Ingredients"
-                    imageSrc=""
+                    imageSrc={ingredientImage}
                     onClick={() => navigate("/search-by-ingredients")}
                 />
 
                 <Card
                     title="Search by Recipe"
-                    imageSrc=""
+                    imageSrc={recipeImage}
                     onClick={() => navigate("/search-by-recipe")}
                 />  
             </div>
