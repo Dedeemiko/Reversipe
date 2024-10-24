@@ -1,5 +1,6 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/mixins" as *;
 
@@ -7,4 +8,5 @@
 	display: flex;
 	background-color: $secondary-background-color;
 	color: $primary-text-color;
+	padding: 1rem;
 }

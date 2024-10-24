@@ -1,0 +1,20 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.footer {
+	&__icons {
+		display: flex;
+		flex-direction: row;
+		width: 20%;
+		gap: 1rem;
+		padding: 1rem;
+	}
+
+	&__icons img {
+		width: 80%;
+		max-width: 200px;
+	}
+}

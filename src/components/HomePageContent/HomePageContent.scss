@@ -1,11 +1,25 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/mixins" as *;
 
 .homepage-content {
 	display: flex;
+	flex-direction: column;
 	background-color: $primary-background-color;
+
+	h2 {
+		display: flex;
+		justify-content: center;
+		padding: 1rem;
+	}
+
+	p {
+		display: flex;
+		justify-content: center;
+		padding: 1rem;
+	}
 
 	&__options {
 		display: flex;
