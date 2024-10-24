@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SearchInput from "../../components/SearchInput/SearchInput";
+import Button from "../../components/Button/Button";
 
 
 function SearchByIngredientsPage() {
@@ -11,14 +12,22 @@ function SearchByIngredientsPage() {
     };
 
     return (
-        <div className="Search-ingredients">
+        <div className="search-ingredients">
             <h2>Search by Ingredients</h2>
 
-            <SearchInput
-                value={searchItem}
-                onChange={handleSearch}
-                placeholder="Enter ingredients..."
-            />
+            <div className="search-ingredients__options">
+                <SearchInput
+                    value={searchItem}
+                    onChange={handleSearch}
+                    placeholder="Enter ingredients..."
+                />
+
+                <Button
+                    buttonType="primary"
+                    text="Search"
+                    handleClick={handleSearch}
+                />
+            </div>
         </div>
     )
 };
