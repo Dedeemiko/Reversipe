@@ -9,12 +9,14 @@ import "./SearchByRecipePage.scss";
 function SearchByRecipePage() {
     const [searchItem, setSearchItem] = useState("");
     const [recipes, setRecipes] = useState([]);
+    
 
     const handleSearch = async () => {
         try {
             const response = await axios.get(`${baseUrl}api/recipes/search`, { params: { name: searchItem },
             });
             setRecipes(response.data);
+            
         } catch (error) {
             console.error("Error searching for recipes", error);
         }
