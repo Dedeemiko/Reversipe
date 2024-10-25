@@ -1,22 +1,31 @@
 import "./Header.scss";
+import logo from "../../assets/icons/Reversipe-Logo.svg";
+import MenuIcon from "../../assets/icons/Menu-Icon.svg";
+import { Link } from "react-router-dom"
+
+
 
 function Header() {
 
     return (
         <header className="header">
             <nav className="header__nav">
-                <div className="header__logo">
+                <div className="header__logo-container">
 
-                    <h1>Reversipe</h1>
-                    {/* <Link to="/">
+                    <Link to="/" className="header__logo">
                             <img
                                 src={logo}
-                                alt="Reversipe Logo"
+                                alt="Reversipe logo"
                                 className="header__logo-img"
                             />
-                    </Link> */}
-
+                    </Link>
                 </div>
+
+                    <div className="header__menu">
+                        <img src={MenuIcon} />
+                    </div>
+
+                
 
             </nav>
         
