@@ -5,16 +5,25 @@
 @use "../../styles/partials/mixins" as *;
 
 .footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+	background-color: $tertiary-background-color;
+
+	&__header {
+		padding-bottom: 1rem;
+	}
+
 	&__icons {
 		display: flex;
-		flex-direction: row;
-		// width: 20%;
-		gap: 1rem;
-		padding: 1rem;
+		justify-content: center;
+		padding: 1rem 0;
+		gap: 15px;
 	}
 
 	&__icons img {
-		width: 80%;
-		max-width: 200px;
+		width: 30px;
+		height: 30px;
 	}
 }
