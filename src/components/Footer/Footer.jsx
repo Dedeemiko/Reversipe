@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import "./Footer.scss";
 import InstagramIcon from "../../assets/icons/Instagram-Icon.svg";
 import LinkedinIcon from "../../assets/icons/Linkedin-Icon.svg";
-import GitHubLogo from "../../assets/icons/Github-Logo.svg";
+import GitHubIcon from "../../assets/icons/Github-Icon.svg";
 
 function Footer() {
 
@@ -20,7 +20,7 @@ function Footer() {
                     <img src={LinkedinIcon} alt="Linkedin icon" />
                 </Link>
                 <Link to="https://github.com/Dedeemiko">
-                    <img src={GitHubLogo} alt="Github icon" />
+                    <img src={GitHubIcon} alt="Github icon" />
                 </Link>
             </div>
         </footer>
