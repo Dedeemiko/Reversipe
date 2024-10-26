@@ -45,10 +45,16 @@ function SearchByRecipePage() {
                 {recipes.length > 0 ? (
                     <ul>
                         {recipes.map((recipe) => (
-                            <li key={recipe.id}>
-                                <img src={recipe.picture_link} alt={recipe.title} />
-                                <h3>{recipe.title}</h3>
-                                <p>Estimated Time: {recipe.estimated_time} minutes</p>
+                            <li key={recipe.id}
+                            className="search-recipe__list">
+                                <div className="search-recipe__image">
+                                    <img src={recipe.picture_link} alt={recipe.title} />
+                                </div>
+
+                                <div className="search-recipe__list-details">
+                                    <h3>{recipe.title}</h3>
+                                    <p>Estimated Time: {recipe.estimated_time} minutes</p>
+                                </div>
                             </li>
                         )
                         )}

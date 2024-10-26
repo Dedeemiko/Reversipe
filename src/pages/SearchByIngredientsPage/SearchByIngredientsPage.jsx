@@ -42,12 +42,16 @@ function SearchByIngredientsPage() {
                 {recipes.length > 0 ? (
                     <ul>
                         {recipes.map((recipe) => (
-                            <li key={recipe.id}>
-                                <img src={recipe.picture_link} alt={recipe.title} />
-                                <h3>{recipe.title}</h3>
-                                <p>Estimated Time: {recipe.estimated_time} minutes</p>
-                                <p>Ingredients Needed: {recipe.matchRate}
-                                </p>
+                            <li key={recipe.id} className="search-ingredients__list">
+                                <div className="search-ingredients__image">
+                                    <img src={recipe.picture_link} alt="recipe title"/>
+                                </div>
+                                
+                                <div className="search-ingredients__list-details">
+                                    <h3>{recipe.title}</h3>
+                                    <p>Ingredients Needed: {recipe.matchRate}</p>
+                                    <p>Estimated Time: {recipe.estimated_time} minutes</p>
+                                </div>
                             </li>
                         )
                         )}
