@@ -19,6 +19,10 @@
 		@include tablet {
 			padding: 0 3rem;
 		}
+
+		@include desktop {
+			padding: 0 10rem;
+		}
 	}
 
 	&__logo-container {

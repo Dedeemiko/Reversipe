@@ -1,3 +1,5 @@
+@use "../../styles/partials/mixins" as *;
+
 .menu-overlay {
 	position: fixed;
 	top: 0;
@@ -21,9 +23,19 @@
 	position: relative;
 	padding: 20px;
 
+	@include tablet {
+		max-width: 500px;
+		padding: 30px;
+	}
+
+	@include desktop {
+		max-width: 800px;
+	}
+
 	&__header {
 		display: flex;
 		justify-content: flex-end;
+		padding-bottom: 1rem;
 	}
 
 	&__close-icon {

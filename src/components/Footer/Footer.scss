@@ -11,8 +11,16 @@
 	padding: 20px;
 	background-color: $tertiary-background-color;
 
+	@include desktop {
+		align-items: flex-start;
+	}
+
 	&__header {
 		padding-bottom: 1rem;
+
+		@include desktop {
+			padding-left: 2rem;
+		}
 	}
 
 	&__icons {
@@ -20,6 +28,14 @@
 		justify-content: center;
 		padding: 1rem 0;
 		gap: 15px;
+
+		@include tablet {
+			gap: 50px;
+		}
+
+		@include desktop {
+			gap: 30px;
+		}
 	}
 
 	&__icons img {

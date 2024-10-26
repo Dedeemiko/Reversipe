@@ -19,6 +19,14 @@
 		transform: scale(1.05);
 	}
 
+	@include tablet {
+		max-width: 500px;
+	}
+
+	@include desktop {
+		height: 40vh;
+	}
+
 	&__img {
 		width: 100%;
 		height: 100%;
