@@ -1,11 +1,19 @@
+import React, { useState } from "react";
 import "./Header.scss";
 import logo from "../../assets/icons/Reversipe-Logo.svg";
 import MenuIcon from "../../assets/icons/Menu-Icon.svg";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import Menu from "../Menu/Menu";
+
 
 
 
 function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
     return (
         <header className="header">
@@ -22,13 +30,18 @@ function Header() {
                 </div>
 
                     <div className="header__menu">
-                        <img src={MenuIcon} />
+                        <img 
+                            src={MenuIcon} 
+                            alt="Menu Icon"
+                            className="header__menu-icon"
+                            onClick={toggleMenu}
+                            />
                     </div>
 
-                
-
             </nav>
-        
+
+            {isMenuOpen && <Menu closeMenu={() => setIsMenuOpen(false)} />}
+
         </header>
     );
     
