@@ -16,7 +16,7 @@ People typically find it difficult to figure out what they can make with limited
 
 -   People that want to reduce food waste by using the ingredients they have before they expire.
 
--   Users will interact with the app by inputting their available ingredients into the app and receive recipe suggestions. They will have the option to search for meals based on country or region.
+-   Users will interact with the app by inputting their available ingredients into the app and receive recipe suggestions. 
 
 ### Features
 
@@ -28,7 +28,6 @@ People typically find it difficult to figure out what they can make with limited
 
 -   Preparation Time Estimate: An estimation time for cooking will be displayed to the user
 
--   Cusine Search: Search for meals from a particular country or region
 
 ## Implementation
 
@@ -44,33 +43,43 @@ Backend:
 
 -   Node.js
 -   Express
+-   MySQL
 
 -   Axios
 
 ### APIs
 
 -   Will be using data from https://eightportions.com/datasets/Recipes/ to retrieve the recipe information, ingredients and instructions.
+-   Used data from eightportions api to create a limited database, will be expanding it in the future.
 
 ### Sitemap
 
 -   Home Page
 
-    -   This shows a search bar for inputting ingredients
-    -   A filter for selecting recipes based on country or cusine
+    -   This is the welcome page
+    -   It shows 2 options for the user, Search by Ingredients and Search by Recipe.
 
--   Recipe Results Page
+-   Search by Ingredients Page
 
-    -   This displays recipe cards based on the user's input ingredients
-    -   Each card will show the recipe name, the number of ingredients the user has, and the total number required
+    -   This displays recipe cards based on the user's input ingredients.
+    -   This shows a search bar for inputting ingredients.
+    -   Each card will show the recipe name and estimated time to prepare the meal.
+ 
+-   Search by Recipe Page
+
+    -   This displays recipe cards based on the user's input recipe.
+    -   This shows a search bar for inputting recipes.
+    -   Each card will show the recipe name and estimated time to prepare the meal.
 
 -   Recipe Details Page
 
-    -   This shows detailed recipe instructions, ingredients, how many ingredients the user has for the meal, and how many are missing
+    -   This shows detailed recipe instructions, ingredients, estimated time to prepare andplace of origin of meal.
 
--   Cuisine Search Page
-    -   Allow users to search for recipe's based on country or regional cusine
 
 ### Mockups
+
+https://www.figma.com/design/pEWHkdx0XqNVePQVPmHToa/Reversipe?node-id=0-1&t=rpCrrWYNbdkLQ3x1-1
+https://www.figma.com/design/pEWHkdx0XqNVePQVPmHToa/Reversipe?node-id=1-20&t=rpCrrWYNbdkLQ3x1-1
 
 ### Data
 
@@ -79,33 +88,11 @@ Backend:
     -   Ingredients
     -   Instructions
     -   Image
-    -   Country
-    -   Total ingredients required
-    -   Ingredients the user has
-    -   Missing ingredients
+    
 
 ### Endpoints
 
-1. GET/recipes/ingredients/country: This retrives recipes based on ingredients and country selected.
-
--   Parameters: Ingredients, country
-
--   Response:
-
-            [
-                {
-                    "recipeId": "abc123",
-                    "title": "Italian Chicken Stew",
-                    "country": "Italy",
-                    "image": "image_url",
-                    "preparationTime": "45 mins",
-                    "ingredientsRequired": 5,
-                    "ingredientsUserHas": 4,
-                    "missingIngredients": ["oregano"],
-                }
-            ]
-
-2. GET/recipes/ingredients: Retrieves recipes based solely on ingredients provided by the user.
+1. GET/api/recipes/ingredients-search: Retrieves recipes based solely on ingredients provided by the user.
 
 -   Parameters: Ingredients
 
@@ -124,7 +111,7 @@ Backend:
                 }
             ]
 
-3. GET/recipes/search : Retrieves recipes based on a general search term e.g Pasta (This is for users who want to search for recipes by name without providing a specific ingredient).
+3. GET/api/recipes/search : Retrieves recipes based on a general search term e.g Pasta (This is for users who want to search for recipes by name without providing a specific ingredient).
 
 -   Parameters: Query
 
@@ -141,22 +128,6 @@ Backend:
                 }
             ]
 
-4.  3. GET/cusine/country : Retrieves recipes based on the specified country or region.
-
--   Parameters: Country
-
--   Response:
-
-            [
-                {
-                "recipeId": "stu901",
-                "title": "Margherita Pizza",
-                "country": "Italy",
-                "image": "image_url",
-                "preparationTime": "15 mins",
-                "ingredientsRequired": 4
-                }
-            ]
 
 ## Roadmap
 
@@ -165,6 +136,7 @@ Backend:
     -   Set up project repos and environments.
     -   Manually update dataset to include "country" field for each recipe.
     -   Build basic UI framework.
+    -   Create Logo.
 
 -   Search Functionality
 
@@ -174,11 +146,6 @@ Backend:
 -   Recipe Details Page
 
     -   Create Recipe Details Page: This will show ingredients, instructions and missing ingredient information.
-
--   Filter based on Country and Cuisine Search
-
-    -   Add a country filter: To allow users search for recipes by country or region.
-    -   Implement GET endpoint.
 
 -   Testing
 
@@ -198,6 +165,10 @@ Backend:
 
 -   Dietary Preferences: Allow users filter recipes based on dierary restrictions such as vegan, vegetarian, and gluten-free options.
 
+-   Cusine Search: Search for meals from a particular country or region. Add filter for selecting recipes based on country or cusine.
+
+-   Show the user Total ingredients required, ingredients the user has and missing ingredients on the recipe detail page.
+
 -   Responsiveness: Ensure the app is responsive across various breakpoints.
 
 -   Favorites: Add an option for users to save their favorite recipes.
@@ -205,3 +176,5 @@ Backend:
 -   User authentication: Implement a login system in order for users to access their saved recipes and bulk ingredients from any device.
 
 -   Shopping list generator: Create a shopping list for missing ingredients from a recipe.
+
+-   A food board (like pinterest but for food!). Users would be able to post their recipes with photos and other users can save and like posts.
