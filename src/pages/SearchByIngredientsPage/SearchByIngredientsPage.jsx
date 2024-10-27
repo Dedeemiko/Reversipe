@@ -3,6 +3,7 @@ import axios from "axios";
 import SearchInput from "../../components/SearchInput/SearchInput";
 import Button from "../../components/Button/Button";
 import { baseUrl } from "../../utils/api";
+import { Link } from "react-router-dom";
 import "./SearchByIngredientsPage.scss";
 
 
@@ -48,9 +49,14 @@ function SearchByIngredientsPage() {
                                 </div>
                                 
                                 <div className="search-ingredients__list-details">
-                                    <h3>{recipe.title}</h3>
-                                    <p>Ingredients Needed: {recipe.matchRate}</p>
+                                    <Link to={`/recipe/${recipe.id}`} className="search-ingredients__link">
+                                        <h3>{recipe.title}</h3>
+                                    </Link>
+
                                     <p>Estimated Time: {recipe.estimated_time} minutes</p>
+                                    
+                                    <p>Ingredients Needed: {recipe.matchRate}</p>
+                                    
                                 </div>
                             </li>
                         )
