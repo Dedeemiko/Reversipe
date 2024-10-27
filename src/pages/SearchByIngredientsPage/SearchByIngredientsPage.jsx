@@ -10,10 +10,27 @@ import "./SearchByIngredientsPage.scss";
 function SearchByIngredientsPage() {
     const [ingredients, setIngredients] = useState("");
     const [recipes, setRecipes] = useState([]);
+    const [error, setError] = useState("");
+    const [attemptSearch, setAttemptSeacrh] = useState(false);
+
 
     const handleSearch = async () => {
+        if (!ingredients.trim()) {
+            setError("No ingredients provided for search.");
+            return;
+        }
+
+        if (!ingredients.includes(",")) {
+            setError("Please separate multiple ingredients with commas.");
+            return;
+        }
+        
+        setError("");
+        
+        setAttemptSeacrh(true);
+        
         try {
-            const response = await axios.get(`${baseUrl}api/recipes/ingredients-search`, { params: { ingredients: ingredients },
+            const response = await axios.get(`${baseUrl}api/recipes/ingredients-search`, { params: { ingredients },
             });
             setRecipes(response.data);
         } catch (error) {
@@ -30,6 +47,7 @@ function SearchByIngredientsPage() {
                     value={ingredients}
                     onChange={setIngredients}
                     placeholder="Enter ingredients..."
+                    errorMessage={error}
                 />
 
                 <Button
@@ -54,7 +72,7 @@ function SearchByIngredientsPage() {
                                     </Link>
 
                                     <p>Estimated Time: {recipe.estimated_time} minutes</p>
-                                    
+
                                     <p>Ingredients Needed: {recipe.matchRate}</p>
                                     
                                 </div>
@@ -63,7 +81,7 @@ function SearchByIngredientsPage() {
                         )}
                     </ul>
                 ) : (
-                    <p>No recipes found</p>
+                    attemptSearch && <p>No recipes found.</p>
                 )}
 
             </div>

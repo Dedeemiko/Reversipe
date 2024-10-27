@@ -10,9 +10,21 @@ import "./SearchByRecipePage.scss";
 function SearchByRecipePage() {
     const [searchItem, setSearchItem] = useState("");
     const [recipes, setRecipes] = useState([]);
+    const [error, setError] = useState("");
+    const [attemptSearch, setAttemptSeacrh] = useState(false);
+
     
 
     const handleSearch = async () => {
+        if (!searchItem.trim()) {
+            setError("Please enter a recipe to search for");
+            return;
+        } 
+
+        setError("");
+        
+        setAttemptSeacrh(true);
+
         try {
             const response = await axios.get(`${baseUrl}api/recipes/search`, { params: { name: searchItem },
             });
@@ -33,6 +45,7 @@ function SearchByRecipePage() {
                     value={searchItem}
                     onChange={setSearchItem}
                     placeholder="Search Recipe..."
+                    errorMessage={error}
                 />
 
                 <Button
@@ -56,7 +69,7 @@ function SearchByRecipePage() {
                                     <Link to={`/recipe/${recipe.id}`} className="search-ingredients__link">
                                         <h3>{recipe.title}</h3>
                                     </Link>
-                                    
+
                                     <p>Estimated Time: {recipe.estimated_time} minutes</p>
                                 </div>
                             </li>
@@ -65,7 +78,7 @@ function SearchByRecipePage() {
                     </ul>
                 ) : (
 
-                    <p>No recipes found</p>
+                    attemptSearch && <p>No recipes found</p>
                 )}
 
 
