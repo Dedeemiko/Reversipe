@@ -4,6 +4,12 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/mixins" as *;
 
+.recipe-detail {
+	&__img {
+		width: 100%;
+	}
+}
+
 .label {
 	font-weight: bold;
 }
