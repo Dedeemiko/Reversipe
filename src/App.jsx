@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage/HomePage";
 import SearchByIngredientsPage from "./pages/SearchByIngredientsPage/SearchByIngredientsPage";
 import SearchByRecipePage from "./pages/SearchByRecipePage/SearchByRecipePage";
+import RecipeDetailPage from "./components/RecipeDetailPageComponent/RecipeDetailPage";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
                   <Route path="/" element={<HomePage />} />
                   <Route path="/search-by-ingredients" element={<SearchByIngredientsPage />} />
                   <Route path="/search-by-recipe" element={<SearchByRecipePage />} />
+                  <Route path="/recipe/:id" element={<RecipeDetailPage />} />
                 </Routes>
             </main>
           
