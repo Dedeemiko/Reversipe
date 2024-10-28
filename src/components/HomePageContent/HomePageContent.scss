@@ -24,6 +24,8 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		opacity: 1;
+		transition: opacity 0.3s ease;
 
 		@include desktop {
 			flex-direction: row;
@@ -31,5 +33,41 @@
 			gap: 4rem;
 			height: 53vh;
 		}
+	}
+
+	&__options.loading {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+}
+
+.loading-spinner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+}
+
+.spinner {
+	border: 4px solid rgba(0, 0, 0, 0.1);
+	border-left-color: #000;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	animation: spin 1s linear infinite;
+	margin-bottom: 10px;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
 	}
 }
