@@ -58,14 +58,14 @@
 		display: flex;
 		width: 7.5rem;
 		height: 4.375rem;
-		border-radius: 8px;
+		border-radius: 0.5rem;
 		justify-content: flex-end;
 		object-fit: cover;
 		cursor: pointer;
 	}
 
 	&__image img {
-		border-radius: 8px;
+		border-radius: 0.5rem;
 	}
 
 	&__list-details {

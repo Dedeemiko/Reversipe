@@ -12,6 +12,7 @@ function Footer() {
                 Contact Us
             </h3>
 
+            
             <div className="footer__icons">
                 <Link to="https://www.instagram.com/tseun.e/">
                     <img src={InstagramIcon} alt="Instagram icon" />

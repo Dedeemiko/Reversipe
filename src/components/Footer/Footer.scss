@@ -28,19 +28,19 @@
 		display: flex;
 		justify-content: center;
 		padding: 1rem 0;
-		gap: 15px;
+		gap: 0.9375rem;
 
 		@include tablet {
-			gap: 50px;
+			gap: 3.125rem;
 		}
 
 		@include desktop {
-			gap: 30px;
+			gap: 1.875rem;
 		}
 	}
 
 	&__icons img {
-		width: 30px;
+		width: 1.875rem;
 		height: 30px;
 	}
 }

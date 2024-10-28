@@ -5,9 +5,9 @@
 @use "../../styles/partials/mixins" as *;
 
 .search-input {
-	padding: 10px;
-	font-size: 16px;
-	border-radius: 30px;
+	padding: 0.625rem;
+	font-size: 1rem;
+	border-radius: 1.875rem;
 
 	@include tablet {
 		width: 300px;
@@ -20,7 +20,7 @@
 	&__error {
 		color: rgb(245, 5, 5);
 		font-size: 0.9rem;
-		margin-top: 5px;
+		margin-top: 0.3125rem;
 		min-height: 1.2rem;
 
 		@include tablet {

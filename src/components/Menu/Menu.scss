@@ -18,14 +18,14 @@
 	width: 80%;
 	max-width: 400px;
 	height: 50%;
-	border-radius: 8px;
-	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+	border-radius: 0.5rem;
+	box-shadow: 0rem 0.25rem 0.625rem rgba(0, 0, 0, 0.3);
 	position: relative;
-	padding: 20px;
+	padding: 1.25rem;
 
 	@include tablet {
 		max-width: 500px;
-		padding: 30px;
+		padding: 1.875rem;
 	}
 
 	@include desktop {
@@ -52,7 +52,7 @@
 
 	li {
 		list-style: none;
-		padding: 10px 5px;
+		padding: 0.625rem 0.3125rem;
 		cursor: pointer;
 		&:hover {
 			background-color: #f0f0f0;

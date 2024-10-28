@@ -7,7 +7,7 @@
 .recipe-detail {
 	&__img {
 		width: 100%;
-		border-radius: 8px;
+		border-radius: 0.5rem;
 
 		@include desktop {
 			width: 60%;
