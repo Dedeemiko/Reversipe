@@ -9,6 +9,10 @@
 	font-size: 16px;
 	border-radius: 30px;
 
+	@include tablet {
+		width: 300px;
+	}
+
 	@include desktop {
 		width: 500px;
 	}
@@ -17,6 +21,16 @@
 		color: rgb(245, 5, 5);
 		font-size: 0.9rem;
 		margin-top: 5px;
+		min-height: 1.2rem;
+
+		@include tablet {
+			padding: 4rem 0;
+		}
+
+		@include desktop {
+			display: flex;
+			justify-content: center;
+		}
 	}
 }
 
