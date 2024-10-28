@@ -18,6 +18,11 @@
 		padding: 1rem;
 		gap: 1rem;
 
+		@include tablet {
+			flex-direction: row;
+			align-items: baseline;
+		}
+
 		@include desktop {
 			flex-direction: row;
 			justify-content: center;
