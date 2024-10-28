@@ -10,31 +10,47 @@ import "./SearchByIngredientsPage.scss";
 function SearchByIngredientsPage() {
     const [ingredients, setIngredients] = useState("");
     const [recipes, setRecipes] = useState([]);
-    const [error, setError] = useState("");
-    const [attemptSearch, setAttemptSeacrh] = useState(false);
+    const [inputError, setInputError] = useState("");
+    const [notFoundError, setNotFoundError] = useState("");
 
 
     const handleSearch = async () => {
+
+        setNotFoundError("");
+
         if (!ingredients.trim()) {
-            setError("No ingredients provided for search.");
+            setInputError("Please provide ingredients to search for.");
             return;
         }
 
         if (!ingredients.includes(",")) {
-            setError("Please separate multiple ingredients with commas.");
+            setInputError("Please separate multiple ingredients with commas.");
             return;
         }
         
-        setError("");
-        
-        setAttemptSeacrh(true);
+        setInputError("");
+
         
         try {
             const response = await axios.get(`${baseUrl}api/recipes/ingredients-search`, { params: { ingredients },
             });
-            setRecipes(response.data);
+
+            if (response.data.length === 0) {
+                setNotFoundError("Recipe not found with ingredient(s) provided.");
+                setRecipes([]);
+            } else {
+                setNotFoundError("");
+                setRecipes(response.data);
+            }
         } catch (error) {
             console.error("Error searching for recipes", error);
+        }
+    };
+
+    const handleInputChange = (value) => {
+        setIngredients(value);
+        if (inputError) {
+            setInputError("");
         }
     };
 
@@ -45,9 +61,9 @@ function SearchByIngredientsPage() {
             <div className="search-ingredients__options">
                 <SearchInput
                     value={ingredients}
-                    onChange={setIngredients}
+                    onChange={handleInputChange}
                     placeholder="Enter ingredients..."
-                    errorMessage={error}
+                    errorMessage={inputError}
                 />
 
                 <Button
@@ -56,6 +72,8 @@ function SearchByIngredientsPage() {
                     handleClick={handleSearch}
                 />
             </div>
+
+            {notFoundError && <p className="search-ingredients__error">{notFoundError}</p>}
 
             <div className="search-ingredients__results">
                 {recipes.length > 0 ? (
@@ -73,16 +91,13 @@ function SearchByIngredientsPage() {
 
                                     <p>Estimated Time: {recipe.estimated_time} minutes</p>
 
-                                    <p>Ingredients Needed: {recipe.matchRate}</p>
                                     
                                 </div>
                             </li>
                         )
                         )}
                     </ul>
-                ) : (
-                    attemptSearch && <p>No recipes found.</p>
-                )}
+                ) : null}
 
             </div>
         </div>

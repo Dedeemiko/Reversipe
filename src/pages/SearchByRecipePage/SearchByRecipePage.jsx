@@ -14,6 +14,12 @@ function SearchByRecipePage() {
     const [attemptSearch, setAttemptSeacrh] = useState(false);
 
     
+    const handleInputChange = (value) => {
+        setSearchItem(value);
+        if (error) {
+            setError("");
+        }
+    };
 
     const handleSearch = async () => {
         if (!searchItem.trim()) {
@@ -43,7 +49,7 @@ function SearchByRecipePage() {
             <div className="search-recipe__options">
                 <SearchInput
                     value={searchItem}
-                    onChange={setSearchItem}
+                    onChange={handleInputChange}
                     placeholder="Search Recipe..."
                     errorMessage={error}
                 />
