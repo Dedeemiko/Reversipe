@@ -68,7 +68,7 @@ function SearchByRecipePage() {
                             <li key={recipe.id}
                             className="search-recipe__list">
                                 <div className="search-recipe__image">
-                                    <img src={recipe.picture_link} alt={recipe.title} />
+                                        <img src={recipe.picture_link} alt={recipe.title} />
                                 </div>
 
                                 <div className="search-recipe__list-details">
