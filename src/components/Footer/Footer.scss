@@ -1,0 +1,46 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	background-color: $tertiary-background-color;
+
+	@include desktop {
+		align-items: flex-start;
+	}
+
+	&__header {
+		padding-bottom: 1rem;
+
+		@include desktop {
+			padding-left: 2rem;
+		}
+	}
+
+	&__icons {
+		display: flex;
+		justify-content: center;
+		padding: 1rem 0;
+		gap: 0.9375rem;
+
+		@include tablet {
+			gap: 3.125rem;
+		}
+
+		@include desktop {
+			gap: 1.875rem;
+		}
+	}
+
+	&__icons img {
+		width: 1.875rem;
+		height: 30px;
+	}
+}

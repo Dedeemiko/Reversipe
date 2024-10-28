@@ -1,0 +1,39 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.search-input {
+	padding: 0.625rem;
+	font-size: 1rem;
+	border-radius: 1.875rem;
+
+	@include tablet {
+		width: 300px;
+	}
+
+	@include desktop {
+		width: 500px;
+	}
+
+	&__error {
+		color: rgb(245, 5, 5);
+		font-size: 0.9rem;
+		margin-top: 0.3125rem;
+		min-height: 1.2rem;
+
+		@include tablet {
+			padding: 4rem 0;
+		}
+
+		@include desktop {
+			display: flex;
+			justify-content: center;
+		}
+	}
+}
+
+.search-input--error {
+	border-color: rgb(245, 5, 5);
+}
