@@ -7,6 +7,11 @@
 .recipe-detail {
 	&__img {
 		width: 100%;
+		border-radius: 8px;
+
+		@include desktop {
+			width: 60%;
+		}
 	}
 
 	h2 {
