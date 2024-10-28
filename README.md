@@ -105,9 +105,6 @@ https://www.figma.com/design/pEWHkdx0XqNVePQVPmHToa/Reversipe?node-id=1-20&t=rpC
                 "country": "United States",
                 "image": "image_url",
                 "preparationTime": "30 mins",
-                "ingredientsRequired": 5,
-                "ingredientsUserHas": 4,
-                "missingIngredients": ["parmesan"]
                 }
             ]
 
@@ -124,7 +121,6 @@ https://www.figma.com/design/pEWHkdx0XqNVePQVPmHToa/Reversipe?node-id=1-20&t=rpC
                 "country": "Italy",
                 "image": "image_url",
                 "preparationTime": "25 mins",
-                "ingredientsRequired": 6
                 }
             ]
 
